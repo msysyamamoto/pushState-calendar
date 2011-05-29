@@ -1,3 +1,5 @@
+$border_color: #000000
+
 *
   font-family: 'Cabin', arial, serif
   margin: 0
@@ -10,12 +12,12 @@ body
 br
   clear: both
 
-$border_color: #000000
 
 img
   border: none
 
 #wrap
+  margin-top: 10px
   position: relative
   overflow: hidden
   height: 512px
@@ -25,46 +27,52 @@ img
 #contents
   width: 561px
   margin: 20px auto 0px auto
+
 #date
   float: left
   width: 256px
   height: 60px
-  font-size: 32px
   span
+    font-size: 32px
     line-height: 60px
+
 #cursor
   float: left
   a
     text-decoration: none
 .fl
   float: left
+
 #next_month
   float: left
   margin-left: 22px
+
 .padding
   height: 20px
   width: 1px
-#next_year    
+
+#next_year, #prev_year
   margin-left: 4px
-#prev_year
-  margin-left: 4px
+
 #prev_month
   float: left
-#navi
-  margin-bottom: 10px
+
 .this_month
   float: left
   width: 560px
   margin: 0 auto
+
 .weeks
   width: 100% 
   height: 30px
   border-right: 1px solid $border_color
+
 .days
   border-right: 1px solid $border_color
   border-bottom: 1px solid $border_color
   width: 100% 
   height: 100% 
+
 .dcell
   font-size: 32px
   float: left
@@ -73,6 +81,7 @@ img
   border-top: 1px solid $border_color
   border-left: 1px solid $border_color
   padding: 5px 5px 5px 10px
+
 .wcell
   text-align: center
   float: left
@@ -110,7 +119,6 @@ img
 
 .shy
   display: none
-
 
 #wait
   position: absolute 
