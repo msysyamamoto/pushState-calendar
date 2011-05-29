@@ -3,7 +3,6 @@ require 'rubygems'
 require 'date'
 require 'sinatra'
 require 'slim'
-require 'json'
 
 configure :development do
   Slim::Engine.set_default_options :pretty => true
@@ -17,7 +16,7 @@ get '/' do
   redirect "http://#{host}/#{year}/#{month}"
 end
 
-get %r{\A/(\d{4})/(\d{2})(\.json)?\z} do |year, month, json|
+get %r{\A/(\d{4})/(\d{2})\z} do |year, month|
   begin
     @this_month = Date.new(year.to_i, month.to_i, 1)
   rescue
