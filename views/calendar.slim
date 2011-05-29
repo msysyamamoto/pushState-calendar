@@ -1,0 +1,22 @@
+.this_month.bottomright.frame.frame-center class="#{@this_month.strftime('%Y_%m')}"
+  .sv_date.shy
+    .date
+      | #{Date::MONTHNAMES[@this_month.month]} #{@this_month.year}
+    a.prev_year href=date_href(@prev_year)
+    a.next_year href=date_href(@next_year)
+    a.prev_month href=date_href(@prev_month)
+    a.next_month href=date_href(@next_month)
+  .weeks.topright
+    .wcell.sun.topleft Sun 
+    .wcell Mon
+    .wcell Tue
+    .wcell Wed
+    .wcell Thu
+    .wcell Fri
+    .wcell.sat.topright Sat
+  .days.bottom
+    - @weeks.each_with_index do |week, i|
+      - week.each_with_index do |day, wday|
+        div class=dcell_class(day) = day.day
+    br
+  br

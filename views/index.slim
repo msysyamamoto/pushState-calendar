@@ -1,0 +1,41 @@
+! doctype html
+html
+  head
+    meta http-equiv='Content-Type' content='text/html; charset=utf-8'
+    meta http-equiv='Content-Script-Type' content='text/javascript'
+    meta http-equiv='Content-Style-Type' content='text/css'
+    link href='http://fonts.googleapis.com/css?family=Cabin:regular,bold' rel='stylesheet' type='text/css'
+    link type='text/css' rel='stylesheet' media='all' href='/hcal.css'
+    script src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js' type='text/javascript'
+    script src='/javascript/hcal.js' type='text/javascript'
+    title 
+      | hcal
+  body
+    #contents
+      #navi
+        #date
+          span
+            | #{Date::MONTHNAMES[@this_month.month]} #{@this_month.year}
+        #ursor
+          .fl
+            .padding
+            #prev_month
+              a.slide href=date_href(@prev_month)
+                img src="/image/left.png" title="previous month"
+          .fl
+            #prev_year
+              a.slide href=date_href(@prev_year)
+                img src="/image/up.png" title="previous year"
+            #next_month
+              a.slide href=date_href(@next_month)
+                img src="/image/right.png" title="next month"
+            #next_year    
+              a.slide href=date_href(@next_year)
+                img src="/image/down.png" title="next year"
+        br
+      #wrap
+        #wait.shy
+          img src="/image/ajax-loader.gif" width="32" height="32"
+        .frames
+          == slim :calendar
+        .frame.frame-loading.shy

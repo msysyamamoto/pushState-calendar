@@ -1,0 +1,5 @@
+pushState を使ったカレンダー.
+
+Heroku で動かせる.
+
+Mac FireFox 4, Chrome 11 で動作確認.
